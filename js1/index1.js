@@ -20,7 +20,7 @@ let loadingContext = (function () {
     return new Promise((resolve) => {
       // 获取所有的图片资源
       $.ajax({
-        url: "../img1/result.txt",
+        url: "./img1/result.txt",
         dataType: "json",
         success: resolve
       })
