@@ -33,7 +33,7 @@ let loadingContext = (function () {
       return
     }
 
-    alert("您的网络信号质量差，请稍后再试"+n)
+    alert("您的网络信号质量差，请稍后再试")
     clearTimeout(maxDelayTimer)
     //$(".loadingBox").remove()
   }
@@ -73,7 +73,6 @@ let loadingContext = (function () {
         .then((data) => {
           //console.log(data)
           totalLength = data.length
-          alert(totalLength+"======totalLength")
 
           data.forEach((item) => {
             let img = new Image()
