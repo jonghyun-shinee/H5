@@ -1,0 +1,525 @@
+@import "reset.min.less";
+
+html,body {
+  font-size: 100px;
+  height: 100%;
+}
+.mainBox {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+// loadingBox
+.loadingBox, .bellBox,.chattingRoom, .cubeBox, .detailBox{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+  .loadingBox {
+    background: #111;
+    display: block;
+
+  h3 {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .5rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: #fff;
+    font-weight: normal;
+  }
+
+  .loading {
+    border-radius: .1rem;
+    width: 4.6rem;
+    height: .3rem;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    .currentLoading {
+      
+      width: 0;
+      height: 100%;
+      background: -webkit-linear-gradient(to left bottom, #62b1b1 0% 25%,#9bbcd4 25% 50%, #62b1b1 50% 75%,#9bbcd4 75% 100%);
+      background: linear-gradient(to left bottom, #62b1b1 0% 25%,#9bbcd4 25% 50%, #62b1b1 50% 75%,#9bbcd4 75% 100%);
+      background-size: .3rem .3rem;
+      background-position: 0 -.3rem;
+      animation: loadingAnimation .3s linear infinite both;
+    }
+  }
+  .messageBtn {
+    font-size: .3rem;
+    word-spacing: .05rem;
+    color: #fff;
+    background: #3d6463;
+    position: absolute;
+    width: 3.5rem;
+    padding: .2rem;
+    left: 50%;
+    top: 50%;
+    margin-left: -1.75rem;
+    border-radius: .2rem;
+    text-align: center;
+    display: none;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    
+  }
+
+}
+
+@keyframes loadingAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -.3rem;
+  }
+}
+
+// bellBox
+.bellBox {
+  display: block;
+  background: url("../img1/phoneBg.jpg");
+  z-index: -1;
+
+  h3 {
+    width: 100%;
+    height: .5rem;
+    line-height: .5rem;
+    font-size: .5rem;
+    text-align: center;
+    color: #fff;
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+
+  .duration {
+    width: 1.6rem;
+    height: .3rem;
+    font-size: .3rem;
+    line-height: .3rem;
+    letter-spacing: .05rem;
+    color: #fff;
+    margin: .3rem auto;
+    text-align: center;
+    display: none;
+  }
+
+  .incomingPhone, .receivePhone {
+    width: 5.2rem;
+    height: 3.6rem;
+    position: absolute;
+    left: 50%;
+    bottom: .3rem;
+    transform: translateX(-50%);
+    background: url("../img1/phoneListen.png") no-repeat;
+    background-size: cover;
+
+    .receivebtn {
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      right: -0.1rem;
+      bottom: .44rem;
+      border: .03rem solid #4cd864;
+      border-radius: 50%;
+      animation: ringBell 1s infinite both;
+
+    }
+
+    @keyframes ringBell {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  .receivePhone {
+    height: 6.59rem;
+    background: url("../img1/phoneDetail.png") no-repeat;
+    background-size: cover;
+    bottom: -6.59rem;
+    transition: 1s;
+
+    .hangoutBtn {
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      left: 50%;
+      margin-left: -.8rem;
+      bottom: .28rem; 
+    }
+  }
+}
+
+// chattingRoom
+.chattingRoom {
+  background: #EAEAEA;
+  z-index: -3;
+  display: block;
+  box-sizing: border-box;
+
+  .quit {
+    width: 100%;
+    height: 1rem;
+    position: fixed;
+    padding-top: .2rem;
+    z-index: 10;
+    background: #EAEAEA;
+    border-bottom: 1px solid #d6dfcdb8;
+  }
+
+  .quitRoom {
+    width: 2rem;
+    height: 70%;
+    text-align: center;
+    font-size: .5rem;
+    position: absolute;
+    right: .3rem;
+    background: #2ab694;
+    color: #fdf2f2;
+    border-radius: .1rem;
+  }
+
+  .join, .departing {
+    width: 100%;
+    display: block;
+    height: .5rem;
+    line-height: .5rem;
+    font-size: .26rem;
+    text-align: center;
+    color: #bbbbaf;
+    float: left;
+  }
+
+  .departing {
+    color: #c98591;
+  }
+
+  .chattingList {
+    width: 100%;
+    height: 9rem;
+    padding-top: .2rem;
+    overflow: auto;
+    position: absolute;
+
+    li {
+      max-width: 3.6rem;
+      padding: 0.25rem;
+      margin-bottom: .4rem;
+      line-height: .4rem;
+      font-size: .26rem;
+      border-radius: .1rem;
+      position: relative;
+
+      .words {
+        width: 3.1rem;
+        word-break: break-all;
+      }
+
+      &.others {
+        float: left;
+        margin-left: 1.25rem;
+        border: .02rem solid #CACACA;
+        background: #fff;
+  
+        .arrow {
+          left: -.1rem;
+          background: url("../img1/messageArrow1.png") no-repeat
+        }
+        img {
+          left: -1rem;
+        }
+      }
+
+      &.me {
+        float: right;
+        margin-right: 1.25rem;
+        border: .02rem solid #96B474;
+        background: #A2E45C;
+  
+        .arrow {
+          right: -.1rem;
+          background: url("../img1/messageArrow2.png") no-repeat
+        }
+        img {
+          right: -1rem;
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        top: .2rem;
+        width: .1rem;
+        height: .2rem;
+        
+      }
+      img {
+        width: .82rem;
+        height: .82rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+
+  .keyboard {
+    width: 100%;
+    height: 5.16rem;
+    position: absolute;
+    // overflow: hidden;
+    // bottom: -4.2rem;
+
+    .keyboardImg {
+      width: 100%;
+      height: 100%;
+    }
+    .typeIn {
+      width: 4rem;
+      height: .4rem;
+      position: absolute;
+      top: .35rem;
+      left: .9rem;
+      font-size: .25rem;
+      border: none;
+   
+    }
+    .submit {
+      position: absolute;
+      width: 1.47rem;
+      height: .74rem;
+      right: .1rem;
+      bottom: .6rem;
+      font-size: .3rem;
+      background: url("../img1/messageChat.png") no-repeat;
+      background-size: cover;
+    }
+    
+  }
+
+}
+
+
+/*CUBE*/
+.cubeBox {
+  background-size: cover;
+  background: #111;
+
+  .cube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -2.55rem 0 0 -2.55rem;
+    width: 5.1rem;
+    height: 5.1rem;
+
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+//cubeBox
+//=>在二维平面中实现3D效果
+.cubeBox {
+  display: block;
+  z-index: -5;
+  //1.给需要实现3D变形元素所在的舞台设置“视距”(1000~2000)
+  perspective: 2000px;
+
+  .cube {
+    //2.给需要操作的元素设置3D变形效果
+    transform-style: preserve-3d;
+
+    //3.基于TRASFORM实现3D变形
+    li {
+      &:nth-child(1) {
+        transform: translateZ(2.55rem)
+      }
+
+      &:nth-child(2) {
+        transform: translateZ(-2.55rem)
+      }
+
+      &:nth-child(3) {
+        transform: rotateY(90deg) translateZ(-2.55rem)
+      }
+
+      &:nth-child(4) {
+        transform: rotateY(90deg) translateZ(2.55rem)
+      }
+
+      &:nth-child(5) {
+        transform: rotateX(90deg) translateZ(-2.55rem)
+      }
+
+      &:nth-child(6) {
+        transform: rotateX(90deg) translateZ(2.55rem)
+      }
+    }
+
+    //4.给魔方一个初始的旋转角度，让其可以看到3D的效果（旋转后太大了，把魔方缩小一点）
+    transform: scale(0.7) rotateX(-20deg) rotateY(35deg);
+    transition: .3s; //=>后期让魔方旋转的时候有一个平稳的过渡动画效果
+  }
+}
+
+.detailBox {
+  display: none;
+  height: 100%;
+  overflow: hidden;
+
+
+  .swiper-container {
+    height: 100%;
+    overflow: hidden;
+
+    .swiper-wrapper {
+      height: 100%;
+      
+      .swiper-slide {
+        position: relative; /*每一个页面中的元素相对于自己的页面定位*/
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        float: left;
+        
+        &:nth-child(1) {
+          background: #d1e2ef;
+
+          dl {
+            font-size:.3rem;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            height: 0;
+
+            overflow:hidden;
+            animation: movv2 6s linear both;
+
+            dt {
+              height: .8rem;
+              line-height: .8rem;
+              text-align: center;
+              font-size: .45rem
+            }
+
+            dd {
+              height: .8rem;
+              line-height: .8rem;
+              padding: 0 .2rem;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+  
+            
+
+              &:nth-child(1) {
+                animation:movv .5s linear .5s both;
+              }
+              &:nth-child(2) {
+                animation:movv .5s linear .1s both;
+              }
+              &:nth-child(3) {
+                animation:movv .5s linear 1.5s both;
+              }
+              &:nth-child(4) {
+                animation:movv .5s linear 2s both;
+              }
+              &:nth-child(5) {
+                animation:movv .5s linear 2.5s both;
+              }
+              &:nth-child(6) {
+                animation:movv .5s linear 3s both;
+              }
+              &:nth-child(7) {
+                animation:movv .5s linear 3.5s both;
+              }
+              &:nth-child(8) {
+                animation:movv .5s linear 4s both;
+              }
+              &:nth-child(9) {
+                animation:movv .5s linear 4.5s both;
+              }
+              &:nth-child(10) {
+                animation:movv .6s linear 5s both;
+              }
+              &:nth-child(11) {
+                animation:movv .6s linear 5.5s both;
+              }
+            }
+            
+          }
+        }
+    
+        &:nth-child(2) {
+          background: rgb(13, 18, 94);
+        }
+    
+        &:nth-child(3) {
+          background: rgb(20, 170, 82);
+        }
+      }
+    }
+      
+    
+  }
+}
+
+@keyframes movv {
+  0% {
+    transform: "";
+  }
+  50% {
+    transform: rotateX(40deg) translateY(.12rem)
+  }
+  100% {
+    transform: ""
+  }
+}
+
+// @keyframes movv1 {
+//   0% {
+//     transform:""
+//   }
+//   50% {
+//     transform: rotateX(40deg) translateY(-.12rem)
+//   }
+//   100% {
+//     transform: ""
+//   }
+  
+// }
+
+@keyframes movv2 {
+  0% {
+    height: 0
+  }
+  100% {
+    height: 610px;
+  }
+}

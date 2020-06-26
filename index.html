@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no maximum-scale=1.0 minimum-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet/css" href="./css1/swiper.min.css">
+  <link rel="stylesheet/less" href="./css1/index1.less">
+  <script src="./js1/less-2.5.3.min.js"></script>
+  <script src="js1/zepto.min.js"></script>
+  <script src="js1/prefixfree.min.js"></script>
+  <script src="./js1/socket.io.js"></script>
+  <script src="./js1/swiper.min.js"></script>
+
+</head>
+<body>
+  <div class="mainBox">
+    <!-- loading -->
+    <div class="loadingBox">
+      <h3>JONGHYUN</h3>
+      <div class="loading">
+        <div class="currentLoading"></div>
+      </div>
+      <div class="messageBtn">There is A new call, please check out</div>
+    </div>
+
+    <!-- ringBell -->
+    <div class="bellBox">
+      <h3>JONGHYUN</h3>
+      <div class="duration">00:00</div>
+      <div class="incomingPhone">
+        <div class="receivebtn"></div>
+      </div>
+      <div class="receivePhone">
+        <div class="hangoutBtn"></div>
+      </div>
+      <audio id="ring" src="../audio/除了我爱你这句话.mp3"></audio>
+      <audio id="conversation" src="../audio/blue.mp3"></audio>
+    </div>
+
+    <!-- chatting -->
+    <div class="chattingRoom">
+      <div class="quit">
+        <span class="quitRoom">quit</span>
+      </div>
+      <ul class="chattingList clearfix">
+        <!--
+        <span class="join">谁加入了</span>
+        <span class="departing">谁离开了</span>
+        <li class="others">
+          <img src="../img1/avator2.jpg" alt="" class="avator">
+          <i class="arrow"></i>
+          <div class="words">我是otherserrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr</div>
+        </li>
+        <li class="me">
+          <img src="../img1/avator1.jpg" alt="" class="avator">
+          <i class="arrow"></i>
+          <div class="words">我是我大家好才是真的叫是滴是滴了上看到了</div>
+        </li>
+       -->
+        
+        
+      </ul>
+      <!-- 键盘 -->
+      <div class="keyboard">
+        <img src="../img1/messageKeyBoard.png" alt="" class="keyboardImg" />
+        <input type="text" class="typeIn" />
+        <div class="submit"></div>
+      </div>
+    </div>
+
+    <!-- cubeBox -->
+    <section class="cubeBox">
+      <ul class="cube">
+          <li><img src="../img1/zx1.jpg" alt=""></li>
+          <li><img src="../img1/zx2.jpg" alt=""></li>
+          <li><img src="../img1/zx3.jpg" alt=""></li>
+          <li><img src="../img1/zx4.jpg" alt=""></li>
+          <li><img src="../img1/zx5.jpg" alt=""></li>
+          <li><img src="../img1/zx6.jpg" alt=""></li>
+      </ul>
+    </section>
+
+    <!-- detailBox -->
+    <section class="detailBox">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide page1">
+                <dl>
+                    <dt>when we were young</dt>
+                    <dd class="not">
+                        <a href="javascript:;">Everybody loves the things you do</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">To the way you move</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">Everybody here is watching you</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">Cause you feel like home</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">You're like a dream come true</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">But if by chance you're here alone</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">Can I have a moment before I go?</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">Cause I've been by myself all night long</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">Hoping you're someone I used to know</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">You look like a movie</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">You sound like a song...</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="./js1/index1.js"></script>
+</body>
+</html>
